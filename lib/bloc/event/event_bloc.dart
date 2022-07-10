@@ -69,7 +69,7 @@ class EventBloc extends Bloc<EventEvent, EventState> {
 
         return true;
       }else{
-
+        
         print(resp.body);
         return false;
       }

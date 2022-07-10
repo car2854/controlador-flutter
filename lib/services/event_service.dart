@@ -28,8 +28,6 @@ class EventService {
       "idhorario": idhorario
     };
 
-    print(data);
-
     var urlParse = Uri.parse('${Enviroment.apiUrl}/v1.0.0/controlador/infoTickets');
     final resp = await http.post(urlParse, 
       body: jsonEncode(data),
