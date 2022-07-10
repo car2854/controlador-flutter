@@ -69,8 +69,11 @@ class EventBloc extends Bloc<EventEvent, EventState> {
 
         return true;
       }else{
-        
-        print(resp.body);
+      
+        if (resp.statusCode != 500){
+          final errorResponse = errorResponseFromJson(resp.body);
+          error = errorResponse;
+        }
         return false;
       }
     
