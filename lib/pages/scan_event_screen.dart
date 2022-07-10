@@ -52,6 +52,13 @@ class _ScanEventScreenState extends State<ScanEventScreen> {
                 onQRViewCreated: (data){
                   _onQRViewCreated(data, context);
                 },
+                overlay: QrScannerOverlayShape(
+                  borderColor: Theme.of(context).accentColor,
+                  borderRadius: 10,
+                  borderLength: 20,
+                  borderWidth: 10,
+                  cutOutSize: MediaQuery.of(context).size.width * 0.8
+                ),
               )
             )
           ],
@@ -66,7 +73,6 @@ class _ScanEventScreenState extends State<ScanEventScreen> {
 
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) async{
-      print('object');
       result = scanData;
 
       if (result != null && !eventBloc.isResult){
