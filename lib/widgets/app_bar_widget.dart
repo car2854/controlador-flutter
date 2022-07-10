@@ -58,9 +58,9 @@ class AppBarWidget extends StatelessWidget {
                           TextButton(
                             onPressed: () async {
                               await userBloc.logout();
-                              // Navigator.pop(context, 'OK');
                               Navigator.pushNamedAndRemoveUntil(
                                   context, 'login', (route) => false);
+                                  eventBloc.isResult = false;
                             },
                             child: const Text('Si'),
                           ),
